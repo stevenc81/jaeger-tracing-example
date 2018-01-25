@@ -1,0 +1,45 @@
+hash: 2408713f37775b5977d7eab669a6837294a6b81d04eacd241b040b1aca7617d1
+updated: 2018-01-21T12:41:00.483676-08:00
+imports:
+- name: github.com/apache/thrift
+  version: b2a4d4ae21c789b689dd162deb819665567f481c
+  subpackages:
+  - lib/go/thrift
+- name: github.com/codahale/hdrhistogram
+  version: f8ad88b59a584afeee9d334eff879b104439117b
+- name: github.com/jaegertracing/jaeger-client-go
+  version: 3ac96c6e679cb60a74589b0d0aa7c70a906183f7
+  subpackages:
+  - config
+- name: github.com/opentracing-contrib/go-stdlib
+  version: 1de4cc2120e71f745a5810488bf64b29b6d7d9f6
+  subpackages:
+  - nethttp
+- name: github.com/opentracing/opentracing-go
+  version: 1949ddbfd147afd4d964a9f00b24eb291e0e7c38
+  subpackages:
+  - ext
+  - log
+- name: github.com/uber/jaeger-client-go
+  version: 3ac96c6e679cb60a74589b0d0aa7c70a906183f7
+  subpackages:
+  - internal/baggage
+  - internal/baggage/remote
+  - internal/spanlog
+  - log
+  - rpcmetrics
+  - thrift-gen/agent
+  - thrift-gen/baggage
+  - thrift-gen/jaeger
+  - thrift-gen/sampling
+  - thrift-gen/zipkincore
+  - utils
+- name: github.com/uber/jaeger-lib
+  version: 7f95f4f7e80028096410abddaae2556e4c61b59f
+  subpackages:
+  - metrics
+- name: golang.org/x/net
+  version: a337091b0525af65de94df2eb7e98bd9962dcbe2
+  subpackages:
+  - context
+testImports: []

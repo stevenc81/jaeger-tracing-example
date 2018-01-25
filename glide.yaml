@@ -1,0 +1,5 @@
+package: main
+import:
+- package: github.com/uber/jaeger-client-go
+  version: ^2.11.2
+- package: github.com/opentracing-contrib/go-stdlib

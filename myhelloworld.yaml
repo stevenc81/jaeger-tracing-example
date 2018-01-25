@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: myhelloworld
+  name: myhelloworld
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myhelloworld
+    spec:
+      containers:
+      - image: stevenc81/jaeger-tracing-example:0.1
+        imagePullPolicy: Always
+        name: myhelloworld
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myhelloworld
+  labels:
+    app: myhelloworld
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 8080
+    name: http
+  selector:
+    app: myhelloworld
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myhelloworld
+  annotations:
+    kubernetes.io/ingress.class: "istio"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: myhelloworld
+          servicePort: 80
+      - path: /gettime
+        backend:
+          serviceName: myhelloworld
+          servicePort: 80
